@@ -1,0 +1,37 @@
+test(){
+        let data=this.data
+
+
+
+        data.forEach((e)=>{
+          let arr2=[]
+          if(e.city!=undefined) {
+            e.city.forEach((r) => {
+              let arr3=[]
+              if (r.area != undefined) {
+                r.area.forEach((s) => {
+                  arr3.push({
+                    value:s.code,
+                    label:s.name
+                  })
+                })
+
+              }
+              arr2.push({
+                value:r.code,
+                label:r.name,
+                children:arr3
+              })
+              console.log(r.name)
+              console.log(arr2)
+            })
+
+        }
+          this.da.push({
+            value:e.code,
+            label:e.name,
+            children:arr2
+          })
+        })
+console.log(this.da)
+      },
